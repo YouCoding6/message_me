@@ -5,6 +5,12 @@
 }
 
 #messages{
-    height: 15em;
+    height: 10em;
     overflow: auto;
+}
+
+.input{
+    button{
+        display: none;
+    }
 }
