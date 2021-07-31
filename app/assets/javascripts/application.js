@@ -42,3 +42,8 @@ $(document).on('turbolinks:load', function () {
     submit_message();
     scroll_bottom();
 });
+
+function signupModal() {
+    $('.ui.modal')
+        .modal("show")
+}
