@@ -4,6 +4,18 @@ class SessionsController < ApplicationController
   def new
   end
 
+  def signup
+    @user = User.new(user_params)   
+    if @user.save
+        session[:user_id]  = @user.id
+        flash[:success] = "You have successfully signed up"
+        redirect_to root_path
+    else
+        flash.now[:error] = "There was something wrong with your signup information"
+        render 'new'
+    end
+  end
+
   def create
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
@@ -29,5 +41,9 @@ class SessionsController < ApplicationController
       flash[:error] = "You are already looged in"
       redirect_to root_path
     end
+  end
+
+  def user_params
+    params.require(:signup).permit(:username,:password)
   end
 end
