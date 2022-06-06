@@ -29,12 +29,12 @@
         <%= f.button "Login", class: "ui orange submit button" %>
       <% end %>
     </div>
-    <div class="middle aligned column">
-      <div class="ui big orange button">
-        <i class="signup icon"></i>
-        <%= link_to "Sign Up", signup_path,class:"btn-signup"%>
+    <%= link_to({controller:'users', action:'new'}, { class: "ui middle aligned column" }) do%>      
+      <div class=" ui orange submit button btn-signup">
+          <span>Sign Up</span>&nbsp 
+          <i class="signup icon"></i>    
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="ui vertical divider">
     Or
