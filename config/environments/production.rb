@@ -22,7 +22,7 @@ Rails.application.configure do
   config.web_socket_server_url = "wss://real-time-message-me.herokuapp.com/cable" 
   
   #Allow request origins
-  config.action_cable.allowed_request_origins = ['https://real-time-message-me.herokuapp.com', 'http://real-time-message-me.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://real-time-message-me.herokuapp.com']
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
